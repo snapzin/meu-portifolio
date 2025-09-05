@@ -1,0 +1,594 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    min-height: 100vh;
+    position: relative;
+    background-color: #111827;
+}
+
+.hero-bg {
+    background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
+}
+
+#vanta-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.skill-bar {
+    height: 8px;
+    border-radius: 4px;
+    background: #e2e8f0;
+}
+
+.skill-progress {
+    height: 100%;
+    border-radius: 4px;
+    background: linear-gradient(90deg, #ffd700 0%, #b8860b 100%);
+}
+
+.project-card {
+    transition: all 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Smooth transitions for all interactive elements */
+a, button, input, textarea {
+    transition: all 0.3s ease;
+}
+
+/* Improved touch targets for mobile */
+@media (max-width: 768px) {
+    a, button {
+        min-height: 44px;
+        min-width: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    /* Better spacing for mobile */
+    .space-y-6 > * + * {
+        margin-top: 2rem;
+    }
+    
+    /* Improved form inputs */
+    input, textarea {
+        font-size: 16px; /* Prevents zoom on iOS */
+        padding: 12px 16px;
+    }
+}
+
+.active-nav {
+    color: #ffd700;
+    font-weight: 500;
+}
+
+/* Mobile Menu Animation */
+#mobile-menu {
+    transition: all 0.3s ease-in-out;
+    transform: translateY(-100%);
+    opacity: 0;
+}
+
+#mobile-menu.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Tablet Styles (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .container {
+        padding: 0 2rem;
+    }
+    
+    #home h1 {
+        font-size: 3.5rem;
+    }
+    
+    #home h2 {
+        font-size: 2rem;
+    }
+    
+    #home img {
+        width: 220px;
+        height: 220px;
+    }
+    
+    .grid.md\:grid-cols-2 {
+        gap: 3rem;
+    }
+    
+    section {
+        padding: 80px 2rem;
+    }
+    
+    .project-card {
+        max-width: 500px;
+    }
+    
+    .grid.grid-cols-2 {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+}
+
+/* Mobile Styles (max-width: 768px) */
+@media (max-width: 768px) {
+    .hero-bg {
+        padding-top: 100px;
+        padding-bottom: 60px;
+    }
+    
+    #home h1 {
+        font-size: 2.5rem;
+        line-height: 1.2;
+    }
+    
+    #home h2 {
+        font-size: 1.5rem;
+    }
+    
+    #home img {
+        width: 180px;
+        height: 180px;
+        margin-top: 2rem;
+    }
+    
+    .grid-cols-2, .grid-cols-3 {
+        grid-template-columns: 1fr;
+    }
+    
+    nav .hidden.md\:flex {
+        display: none;
+    }
+    
+    nav .md\:hidden {
+        display: flex;
+    }
+    
+    section {
+        padding: 60px 1rem;
+    }
+    
+    .text-3xl {
+        font-size: 2rem;
+    }
+    
+    .text-2xl {
+        font-size: 1.5rem;
+    }
+    
+    .flex-col {
+        flex-direction: column;
+    }
+    
+    .space-y-6 > * + * {
+        margin-top: 1.5rem;
+    }
+    
+    .project-card {
+        margin-bottom: 1.5rem;
+        background-color: #1f2937 !important;
+        border: 1px solid #374151;
+        max-width: 100%;
+    }
+    
+    .skill-bar {
+        margin-bottom: 1rem;
+        background-color: #374151;
+    }
+    
+    .bg-white {
+        background-color: #1f2937 !important;
+        border: 1px solid #374151;
+    }
+    
+    .bg-white h4 {
+        color: #e5e7eb;
+    }
+    
+    .text-gray-600 {
+        color: #d1d5db !important;
+    }
+    
+    /* Mobile buttons */
+    .flex.space-x-4 {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .flex.space-x-4 a {
+        text-align: center;
+        width: 100%;
+    }
+    
+    /* Mobile form improvements */
+    form .space-y-6 > * {
+        margin-bottom: 1.5rem;
+    }
+    
+    /* Mobile contact info */
+    .bg-gray-800.p-8 {
+        padding: 1.5rem;
+        margin-top: 2rem;
+    }
+    
+    /* Mobile footer */
+    .flex.flex-col.md\:flex-row {
+        text-align: center;
+    }
+    
+    .flex.space-x-6 {
+        justify-content: center;
+        margin-top: 1rem;
+    }
+}
+
+/* iPhone Plus and similar (414px) */
+@media (max-width: 414px) {
+    #home h1 {
+        font-size: 2.25rem;
+        line-height: 1.1;
+    }
+    
+    #home h2 {
+        font-size: 1.375rem;
+    }
+    
+    #home img {
+        width: 160px;
+        height: 160px;
+    }
+    
+    section {
+        padding: 50px 1rem;
+    }
+    
+    .text-3xl {
+        font-size: 1.875rem;
+    }
+    
+    .text-2xl {
+        font-size: 1.375rem;
+    }
+    
+    .bg-gray-800.p-8 {
+        padding: 1.25rem;
+    }
+}
+
+/* iPhone SE, iPhone 6/7/8 (375px) */
+@media (max-width: 375px) {
+    #home h1 {
+        font-size: 2rem;
+        line-height: 1.1;
+    }
+    
+    #home h2 {
+        font-size: 1.25rem;
+    }
+    
+    #home img {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .px-6 {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    .py-3 {
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
+    }
+    
+    .text-lg {
+        font-size: 1rem;
+    }
+    
+    .project-card {
+        margin-bottom: 1.5rem;
+    }
+    
+    section {
+        padding: 40px 0.75rem;
+    }
+    
+    .text-3xl {
+        font-size: 1.75rem;
+    }
+    
+    .text-2xl {
+        font-size: 1.25rem;
+    }
+    
+    /* iPhone SE grid adjustments */
+    .grid.grid-cols-2 {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+    
+    /* iPhone SE contact form */
+    .bg-gray-800.p-8 {
+        padding: 1rem;
+    }
+    
+    /* iPhone SE navigation */
+    nav .text-xl {
+        font-size: 1.125rem;
+    }
+    
+    /* iPhone SE buttons */
+    .flex.flex-col.sm\:flex-row.gap-4 a {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.875rem;
+    }
+    
+    /* iPhone SE hero text */
+    #home p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+}
+
+/* Android Small (360px) */
+@media (max-width: 360px) {
+    #home h1 {
+        font-size: 1.875rem;
+        line-height: 1.1;
+    }
+    
+    #home h2 {
+        font-size: 1.125rem;
+    }
+    
+    #home img {
+        width: 140px;
+        height: 140px;
+    }
+    
+    section {
+        padding: 35px 0.5rem;
+    }
+    
+    .text-3xl {
+        font-size: 1.625rem;
+    }
+    
+    .text-2xl {
+        font-size: 1.125rem;
+    }
+    
+    .bg-gray-800.p-8 {
+        padding: 0.875rem;
+    }
+    
+    nav .text-xl {
+        font-size: 1rem;
+    }
+    
+    .flex.flex-col.sm\:flex-row.gap-4 a {
+        padding: 0.625rem 1.25rem;
+        font-size: 0.8rem;
+    }
+    
+    #home p {
+        font-size: 0.9rem;
+    }
+    
+    /* Android small grid */
+    .grid.grid-cols-2 {
+        gap: 0.5rem;
+    }
+}
+
+/* Very Small Devices (320px) */
+@media (max-width: 320px) {
+    #home h1 {
+        font-size: 1.75rem;
+        line-height: 1.1;
+    }
+    
+    #home h2 {
+        font-size: 1rem;
+    }
+    
+    #home img {
+        width: 120px;
+        height: 120px;
+    }
+    
+    section {
+        padding: 30px 0.5rem;
+    }
+    
+    .text-3xl {
+        font-size: 1.5rem;
+    }
+    
+    .text-2xl {
+        font-size: 1rem;
+    }
+    
+    .bg-gray-800.p-8 {
+        padding: 0.75rem;
+    }
+    
+    nav .text-xl {
+        font-size: 0.95rem;
+    }
+    
+    .flex.flex-col.sm\:flex-row.gap-4 a {
+        padding: 0.5rem 1rem;
+        font-size: 0.75rem;
+    }
+    
+    #home p {
+        font-size: 0.85rem;
+    }
+    
+    /* Very small grid */
+    .grid.grid-cols-2 {
+        gap: 0.375rem;
+    }
+    
+    /* Very small form inputs */
+    input, textarea {
+        font-size: 14px;
+        padding: 10px 12px;
+    }
+}
+
+/* Landscape orientation for small devices */
+@media (max-height: 500px) and (orientation: landscape) {
+    #home {
+        padding-top: 80px !important;
+        padding-bottom: 40px !important;
+    }
+    
+    #home h1 {
+        font-size: 1.5rem !important;
+        margin-bottom: 0.5rem !important;
+    }
+    
+    #home h2 {
+        font-size: 1rem !important;
+        margin-bottom: 1rem !important;
+    }
+    
+    #home img {
+        width: 100px !important;
+        height: 100px !important;
+    }
+    
+    #home p {
+        font-size: 0.8rem !important;
+        margin-bottom: 1rem !important;
+    }
+    
+    .flex.flex-col.sm\:flex-row.gap-4 {
+        flex-direction: row !important;
+        gap: 0.5rem !important;
+    }
+    
+    .flex.flex-col.sm\:flex-row.gap-4 a {
+        padding: 0.4rem 0.8rem !important;
+        font-size: 0.7rem !important;
+    }
+    
+    section {
+        padding: 30px 1rem !important;
+    }
+    
+    .text-3xl {
+        font-size: 1.25rem !important;
+    }
+    
+    .text-2xl {
+        font-size: 1rem !important;
+    }
+}
+
+/* Specific device optimizations */
+/* iPhone SE in landscape */
+@media (max-width: 667px) and (max-height: 375px) and (orientation: landscape) {
+    #home {
+        padding-top: 60px !important;
+        padding-bottom: 30px !important;
+    }
+    
+    .grid.md\:grid-cols-2 {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 1rem !important;
+    }
+    
+    #home img {
+        width: 80px !important;
+        height: 80px !important;
+    }
+}
+
+/* iPhone 6/7/8 in landscape */
+@media (max-width: 736px) and (max-height: 414px) and (orientation: landscape) {
+    #home {
+        padding-top: 70px !important;
+        padding-bottom: 35px !important;
+    }
+    
+    .grid.md\:grid-cols-2 {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 1.5rem !important;
+    }
+    
+    #home img {
+        width: 90px !important;
+        height: 90px !important;
+    }
+}
+
+/* Large Desktop Styles (min-width: 1440px) */
+@media (min-width: 1440px) {
+    .container {
+        max-width: 1400px;
+    }
+    
+    #home h1 {
+        font-size: 4rem;
+    }
+    
+    #home h2 {
+        font-size: 2.5rem;
+    }
+    
+    #home img {
+        width: 300px;
+        height: 300px;
+    }
+    
+    section {
+        padding: 120px 2rem;
+    }
+    
+    .project-card {
+        max-width: 600px;
+    }
+}
+
+/* Ultra-wide Desktop Styles (min-width: 1920px) */
+@media (min-width: 1920px) {
+    .container {
+        max-width: 1600px;
+    }
+    
+    #home h1 {
+        font-size: 5rem;
+    }
+    
+    #home h2 {
+        font-size: 3rem;
+    }
+    
+    section {
+        padding: 150px 2rem;
+    }
+}
