@@ -15,93 +15,86 @@
 </head>
 <body class="bg-gray-900 text-gray-100">
     <!-- Navigation -->
-    <nav class="fixed w-full bg-gray-800 shadow-sm z-50 border-b border-gray-700">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
-                <div class="flex items-center">
-                    <a href="#" class="text-xl font-bold text-yellow-400">Zayon Antunes</a>
-                </div>
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#home" class="text-gray-300 hover:text-yellow-400 transition active-nav">Início</a>
-                    <a href="#about" class="text-gray-300 hover:text-yellow-400 transition">Sobre</a>
-                    <a href="#skills" class="text-gray-300 hover:text-yellow-400 transition">Habilidades</a>
-                    <a href="#projects" class="text-gray-300 hover:text-yellow-400 transition">Projetos</a>
-                    <a href="#contact" class="text-gray-300 hover:text-yellow-400 transition">Contato</a>
-                </div>
-                <div class="md:hidden flex items-center">
-                    <button id="menu-btn" class="text-gray-300">
-                        <i data-feather="menu"></i>
-                    </button>
-                </div>
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="nav-logo">Zayon Antunes</a>
+            <div class="nav-links">
+                <a href="#home" class="active">Início</a>
+                <a href="#about">Sobre</a>
+                <a href="#skills">Habilidades</a>
+                <a href="#projects">Projetos</a>
+                <a href="#contact">Contato</a>
             </div>
+            <button class="mobile-menu-btn" id="menu-btn">
+                <i data-feather="menu"></i>
+            </button>
         </div>
-        <!-- Mobile menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-gray-900 pb-3 px-4 border-t border-gray-700">
-            <a href="#home" class="block py-2 text-gray-300 hover:text-yellow-400">Início</a>
-            <a href="#about" class="block py-2 text-gray-300 hover:text-yellow-400">Sobre</a>
-            <a href="#skills" class="block py-2 text-gray-300 hover:text-yellow-400">Habilidades</a>
-            <a href="#projects" class="block py-2 text-gray-300 hover:text-yellow-400">Projetos</a>
-            <a href="#contact" class="block py-2 text-gray-300 hover:text-yellow-400">Contato</a>
+        <div class="mobile-menu" id="mobile-menu">
+            <a href="#home">Início</a>
+            <a href="#about">Sobre</a>
+            <a href="#skills">Habilidades</a>
+            <a href="#projects">Projetos</a>
+            <a href="#contact">Contato</a>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="bg-gray-900 text-white pt-32 pb-20 relative overflow-hidden">
-        <div id="vanta-bg" class="absolute inset-0 bg-gray-900 z-0">
+    <section id="home" class="hero">
+        <div id="vanta-bg" class="hero-bg">
             <div class="absolute inset-0 bg-gradient-to-b from-gray-900 via-gray-900/90 to-gray-900"></div>
         </div>
-        <div class="container mx-auto px-4 relative z-10">
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div data-aos="fade-right">
-                    <h1 class="text-4xl md:text-5xl font-bold mb-4">Olá, eu sou <span class="text-yellow-400">Zayon Antunes</span></h1>
-                    <h2 class="text-2xl md:text-3xl font-semibold mb-6">Desenvolvedor Front-end</h2>
-                    <p class="text-lg mb-8 max-w-lg">Transformo ideias em soluções digitais inovadoras e de alta performance.</p>
-                    <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="#projects" class="bg-yellow-500 text-gray-900 px-6 py-3 rounded-lg font-medium hover:bg-yellow-600 transition text-center">Ver Projetos</a>
-                        <a href="/arquivos/curriculo.pdf" download="Zayon_Antunes_CV.pdf"  class="border-2 border-yellow-500 text-yellow-500 px-6 py-3 rounded-lg font-medium hover:bg-yellow-500 hover:text-gray-900 transition text-center">Baixar CV</a>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text" data-aos="fade-right">
+                    <h1>Olá, eu sou <span class="highlight">Zayon Antunes</span></h1>
+                    <h2>Desenvolvedor Front-end</h2>
+                    <p>Transformo ideias em soluções digitais inovadoras e de alta performance.</p>
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn btn-primary">Ver Projetos</a>
+                        <a href="/arquivos/curriculo.pdf" download="Zayon_Antunes_CV.pdf" class="btn btn-secondary">Baixar CV</a>
                     </div>
                 </div>
-                <div data-aos="fade-left" class="flex justify-center">
-                    <img src="/arquivos/eu2.jpg" alt="Profile" class="rounded-full w-64 h-64 object-cover border-4 border-white shadow-xl">
+                <div class="hero-image" data-aos="fade-left">
+                    <img src="/arquivos/eu2.jpg" alt="Profile">
                 </div>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20 bg-gray-800 border-t border-b border-gray-700">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">Sobre Mim</h2>
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div data-aos="fade-right">
-                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80" alt="About me" class="rounded-lg shadow-lg w-full">
+    <section id="about" class="section about">
+        <div class="section-content">
+            <h2 class="section-title" data-aos="fade-up">Sobre Mim</h2>
+            <div class="about-content">
+                <div class="about-image" data-aos="fade-right">
+                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80" alt="About me">
                 </div>
-                <div data-aos="fade-left">
-                    <h3 class="text-2xl font-semibold mb-4">Minha Jornada</h3>
-                    <p class="text-gray-300 mb-4">Tenho 16 anos e sou um estudante do ensino médio apaixonado por programação. Estou aprendendo desenvolvimento web de forma autodidata através de tutoriais do YouTube e cursos online.</p>
-                    <p class="text-gray-300 mb-6">Estou focado em aprender HTML, CSS e JavaScript para criar sites e aplicações web interessantes. Busco constantemente novos conhecimentos e desafios para melhorar minhas habilidades.</p>
-                    <div class="mb-6">
-                        <h4 class="font-semibold mb-2">Minha Trajetória</h4>
-                        <ul class="space-y-2">
-                            <li class="flex items-start">
-                                <i data-feather="check-circle" class="text-indigo-500 mr-2 mt-1"></i>
+                <div class="about-text" data-aos="fade-left">
+                    <h3>Minha Jornada</h3>
+                    <p>Tenho 16 anos e sou um estudante do ensino médio apaixonado por programação. Estou aprendendo desenvolvimento web de forma autodidata através de tutoriais do YouTube e cursos online.</p>
+                    <p>Estou focado em aprender HTML, CSS e JavaScript para criar sites e aplicações web interessantes. Busco constantemente novos conhecimentos e desafios para melhorar minhas habilidades.</p>
+                    <div class="about-list">
+                        <h4>Minha Trajetória</h4>
+                        <ul>
+                            <li>
+                                <i data-feather="check-circle"></i>
                                 <span>Estudante autodidata de programação</span>
                             </li>
-                            <li class="flex items-start">
-                                <i data-feather="check-circle" class="text-indigo-500 mr-2 mt-1"></i>
+                            <li>
+                                <i data-feather="check-circle"></i>
                                 <span>Desenvolvedor de projetos pessoais</span>
                             </li>
                         </ul>
                     </div>
-                    <div>
-                        <h4 class="font-semibold mb-2">Formação</h4>
-                        <ul class="space-y-2">
-                            <li class="flex items-start">
-                                <i data-feather="book" class="text-indigo-500 mr-2 mt-1"></i>
+                    <div class="about-list">
+                        <h4>Formação</h4>
+                        <ul>
+                            <li>
+                                <i data-feather="book"></i>
                                 <span>Ensino Médio - Em andamento</span>
                             </li>
-                            <li class="flex items-start">
-                                <i data-feather="youtube" class="text-indigo-500 mr-2 mt-1"></i>
+                            <li>
+                                <i data-feather="youtube"></i>
                                 <span>Cursos online e tutoriais do YouTube</span>
                             </li>
                         </ul>
@@ -112,92 +105,92 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="py-20 bg-gray-800 border-t border-b border-gray-700">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">Minhas Habilidades</h2>
+    <section id="skills" class="section skills">
+        <div class="section-content">
+            <h2 class="section-title" data-aos="fade-up">Minhas Habilidades</h2>
             
-            <div class="grid md:grid-cols-2 gap-12">
+            <div class="skills-content">
                 <!-- Technical Skills -->
-                <div data-aos="fade-right">
-                    <h3 class="text-2xl font-semibold mb-6 flex items-center">
-                        <i data-feather="code" class="mr-2 text-indigo-500"></i> Habilidades Técnicas
+                <div class="skills-group" data-aos="fade-right">
+                    <h3>
+                        <i data-feather="code"></i>
+                        Habilidades Técnicas
                     </h3>
-                    <div class="space-y-6">
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span>HTML/CSS</span>
-                                <span>95%</span>
-                            </div>
-                            <div class="skill-bar bg-gray-700">
-                                <div class="skill-progress bg-yellow-500" style="width: 95%"></div>
-                            </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span>HTML/CSS</span>
+                            <span>95%</span>
                         </div>
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span>JavaScript</span>
-                                <span>90%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 90%"></div>
-                            </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 95%"></div>
                         </div>
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span>UI/UX Design</span>
-                                <span>88%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 88%"></div>
-                            </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span>JavaScript</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span>UI/UX Design</span>
+                            <span>88%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 88%"></div>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Soft Skills -->
-                <div data-aos="fade-left">
-                    <h3 class="text-2xl font-semibold mb-6 flex items-center">
-                        <i data-feather="users" class="mr-2 text-indigo-500"></i> Soft Skills
+                <div class="skills-group" data-aos="fade-left">
+                    <h3>
+                        <i data-feather="users"></i>
+                        Soft Skills
                     </h3>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow-sm hover:shadow-md transition">
-                            <i data-feather="message-square" class="text-indigo-500 mb-2"></i>
-                            <h4 class="font-medium text-gray-800 dark:text-gray-100">Comunicação</h4>
+                    <div class="soft-skills">
+                        <div class="soft-skill-card">
+                            <i data-feather="message-square"></i>
+                            <h4>Comunicação</h4>
                         </div>
-                        <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow-sm hover:shadow-md transition">
-                            <i data-feather="clock" class="text-indigo-500 mb-2"></i>
-                            <h4 class="font-medium text-gray-800 dark:text-gray-100">Gestão de Tempo</h4>
+                        <div class="soft-skill-card">
+                            <i data-feather="clock"></i>
+                            <h4>Gestão de Tempo</h4>
                         </div>
-                        <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow-sm hover:shadow-md transition">
-                            <i data-feather="trending-up" class="text-indigo-500 mb-2"></i>
-                            <h4 class="font-medium text-gray-800 dark:text-gray-100">Resolução de Problemas</h4>
+                        <div class="soft-skill-card">
+                            <i data-feather="trending-up"></i>
+                            <h4>Resolução de Problemas</h4>
                         </div>
-                        <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow-sm hover:shadow-md transition">
-                            <i data-feather="heart" class="text-indigo-500 mb-2"></i>
-                            <h4 class="font-medium text-gray-800 dark:text-gray-100">Trabalho em Equipe</h4>
+                        <div class="soft-skill-card">
+                            <i data-feather="heart"></i>
+                            <h4>Trabalho em Equipe</h4>
                         </div>
                     </div>
                 </div>
             </div>
             
             <!-- Tools & Technologies -->
-            <div class="mt-16" data-aos="fade-up">
-                <h3 class="text-2xl font-semibold mb-6 text-center">Tecnologias que Utilizo</h3>
-                <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 justify-items-center">
-                    <div class="flex flex-col items-center">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" class="w-12 h-12 mb-2" alt="HTML5">
-                        <span class="text-sm">HTML5</span>
+            <div class="technologies" data-aos="fade-up">
+                <h3>Tecnologias que Utilizo</h3>
+                <div class="tech-grid">
+                    <div class="tech-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5">
+                        <span>HTML5</span>
                     </div>
-                    <div class="flex flex-col items-center">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" class="w-12 h-12 mb-2" alt="CSS3">
-                        <span class="text-sm">CSS3</span>
+                    <div class="tech-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3">
+                        <span>CSS3</span>
                     </div>
-                    <div class="flex flex-col items-center">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" class="w-12 h-12 mb-2" alt="JavaScript">
-                        <span class="text-sm">JavaScript</span>
+                    <div class="tech-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
+                        <span>JavaScript</span>
                     </div>
-                    <div class="flex flex-col items-center">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/lua/lua-original.svg" class="w-12 h-12 mb-2" alt="Lua">
-                        <span class="text-sm">Lua</span>
+                    <div class="tech-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/lua/lua-original.svg" alt="Lua">
+                        <span>Lua</span>
                     </div>
                 </div>
             </div>
@@ -205,110 +198,105 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-20 bg-gray-900 border-t border-b border-gray-700">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">Meus Projetos</h2>
+    <section id="projects" class="section projects">
+        <div class="section-content">
+            <h2 class="section-title" data-aos="fade-up">Meus Projetos</h2>
             
             <!-- Projeto Único -->
-            <div class="text-center mb-12" data-aos="fade-up">
-                <p class="text-gray-300">Meu projeto no GitHub</p>
+            <div class="text-center mb-3rem" data-aos="fade-up">
+                <p>Meu projeto no GitHub</p>
             </div>
             
-           <!-- Projects Grid -->
-            <div class="grid md:grid-cols-1 gap-8">
+            <!-- Projects Grid -->
+            <div class="projects-grid">
                 <!-- Project 1 - Dra Elaine -->
-                <div class="project-card bg-gray-800 rounded-lg overflow-hidden shadow-md transition duration-300 border border-gray-700 hover:border-yellow-500 mx-auto max-w-lg" data-aos="fade-up" data-aos-delay="100">
-                    <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Site Dra Elaine" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2">Site Dra Elaine</h3>
-                        <p class="text-gray-300 mb-4">Website profissional para nutricionista Dra Elaine com sistema de agendamento e blog.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-indigo-100 text-indigo-800 text-xs px-2 py-1 rounded">HTML</span>
-                            <span class="bg-indigo-100 text-indigo-800 text-xs px-2 py-1 rounded">CSS</span>
-                            <span class="bg-indigo-100 text-indigo-800 text-xs px-2 py-1 rounded">JavaScript</span>
+                <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Site Dra Elaine">
+                    <div class="project-content">
+                        <h3>Site Dra Elaine</h3>
+                        <p>Website profissional para nutricionista Dra Elaine com sistema de agendamento e blog.</p>
+                        <div class="project-tags">
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">JavaScript</span>
                         </div>
-                        <div class="flex flex-col sm:flex-row gap-3">
-                            <a href="https://draelaine.vercel.app" target="_blank" class="text-yellow-500 hover:text-yellow-600 flex items-center justify-center">
-                                <i data-feather="external-link" class="w-4 h-4 mr-1"></i> Demo
+                        <div class="project-links">
+                            <a href="https://draelaine.vercel.app" target="_blank">
+                                <i data-feather="external-link"></i> Demo
                             </a>
-                            <a href="https://github.com/snapzin/site-nutricao" target="_blank" class="text-yellow-500 hover:text-yellow-600 flex items-center justify-center">
-                                <i data-feather="github" class="w-4 h-4 mr-1"></i> Código
+                            <a href="https://github.com/snapzin/site-nutricao" target="_blank">
+                                <i data-feather="github"></i> Código
                             </a>
                         </div>
                     </div>
                 </div>
             </div>
-            
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-gray-800 border-t border-b border-gray-700">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">Entre em Contato</h2>
+    <section id="contact" class="section contact">
+        <div class="section-content">
+            <h2 class="section-title" data-aos="fade-up">Entre em Contato</h2>
             
-            <div class="grid md:grid-cols-2 gap-12">
+            <div class="contact-content">
                 <!-- Contact Form -->
-                <div data-aos="fade-right">
-                    <form class="space-y-6">
-                        <div>
-                            <label for="name" class="block text-sm font-medium text-gray-300 mb-1">Nome</label>
-                            <input type="text" id="name" name="name" class="w-full px-4 py-2 bg-gray-700 border border-gray-600 text-white rounded-lg focus:ring-yellow-500 focus:border-yellow-500 focus:outline-none" required>
+                <div class="contact-form" data-aos="fade-right">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Nome</label>
+                            <input type="text" id="name" name="name" required>
                         </div>
-                        <div>
-                            <label for="email" class="block text-sm font-medium text-gray-300 mb-1">E-mail</label>
-                            <input type="email" id="email" name="email" class="w-full px-4 py-2 bg-gray-700 border border-gray-600 text-white rounded-lg focus:ring-yellow-500 focus:border-yellow-500 focus:outline-none" required>
+                        <div class="form-group">
+                            <label for="email">E-mail</label>
+                            <input type="email" id="email" name="email" required>
                         </div>
-                        <div>
-                            <label for="message" class="block text-sm font-medium text-gray-300 mb-1">Mensagem</label>
-                            <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 bg-gray-700 border border-gray-600 text-white rounded-lg focus:ring-yellow-500 focus:border-yellow-500 focus:outline-none" required></textarea>
+                        <div class="form-group">
+                            <label for="message">Mensagem</label>
+                            <textarea id="message" name="message" required></textarea>
                         </div>
-                        <div>
-                            <button type="submit" class="w-full bg-yellow-500 text-gray-900 px-6 py-3 rounded-lg font-medium hover:bg-yellow-600 transition flex items-center justify-center">
-                                <i data-feather="send" class="mr-2"></i> Enviar Mensagem
-                            </button>
-                        </div>
+                        <button type="submit" class="btn btn-primary w-full">
+                            <i data-feather="send"></i> Enviar Mensagem
+                        </button>
                     </form>
                 </div>
                 
                 <!-- Contact Info -->
-                <div data-aos="fade-left">
-                    <div class="bg-gray-800 p-8 rounded-lg shadow-sm border border-gray-700">
-                        <h3 class="text-xl font-semibold mb-6">Informações de Contato</h3>
-                        <div class="space-y-4">
-                            <div class="flex items-start">
-                                <i data-feather="mail" class="text-yellow-500 mr-4 mt-1"></i>
-                                <div>
-                                    <h4 class="font-medium">E-mail</h4>
-                                    <p class="text-gray-300">zayonantunes@gmail.com</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start">
-                                <i data-feather="phone" class="text-yellow-500 mr-4 mt-1"></i>
-                                <div>
-                                    <h4 class="font-medium">Telefone</h4>
-                                    <p class="text-gray-300">+55 (48) 99670-3321</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start">
-                                <i data-feather="map-pin" class="text-yellow-500 mr-4 mt-1"></i>
-                                <div>
-                                    <h4 class="font-medium">Localização</h4>
-                                    <p class="text-gray-300">Tubarão, Santa Catarina, Brasil</p>
-                                </div>
-                            </div>
+                <div class="contact-info" data-aos="fade-left">
+                    <h3>Informações de Contato</h3>
+                    <div class="contact-item">
+                        <i data-feather="mail"></i>
+                        <div>
+                            <h4>E-mail</h4>
+                            <p>zayonantunes@gmail.com</p>
                         </div>
-                        
-                        <h3 class="text-xl font-semibold mt-8 mb-4">Redes Sociais</h3>
-                        <div class="flex justify-center sm:justify-start space-x-4">
-                            <a href="https://github.com/snapzin" target="_blank" class="text-gray-300 hover:text-yellow-400 transition-colors">
-                                <i data-feather="github" class="w-6 h-6"></i>
+                    </div>
+                    <div class="contact-item">
+                        <i data-feather="phone"></i>
+                        <div>
+                            <h4>Telefone</h4>
+                            <p>+55 (48) 99670-3321</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i data-feather="map-pin"></i>
+                        <div>
+                            <h4>Localização</h4>
+                            <p>Tubarão, Santa Catarina, Brasil</p>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <h3>Redes Sociais</h3>
+                        <div class="social-grid">
+                            <a href="https://github.com/snapzin" target="_blank">
+                                <i data-feather="github"></i>
                             </a>
-                            <a href="https://x.com/_zayon_" target="_blank" class="text-gray-300 hover:text-yellow-400 transition-colors">
-                                <i data-feather="twitter" class="w-6 h-6"></i>
+                            <a href="https://x.com/_zayon_" target="_blank">
+                                <i data-feather="twitter"></i>
                             </a>
-                            <a href="https://www.instagram.com/1zayon_/" target="_blank" class="text-gray-300 hover:text-yellow-400 transition-colors">
-                                <i data-feather="instagram" class="w-6 h-6"></i>
+                            <a href="https://www.instagram.com/1zayon_/" target="_blank">
+                                <i data-feather="instagram"></i>
                             </a>
                         </div>
                     </div>
@@ -318,20 +306,18 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-8 border-t border-gray-700">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-4 md:mb-0">
-                    <a href="#" class="text-xl font-bold text-yellow-400">Zayon Antunes</a>
-                    <p class="text-gray-400 mt-1">© 2023 Todos os direitos reservados.</p>
-                </div>
-                <div class="flex space-x-6">
-                    <a href="#home" class="text-gray-400 hover:text-white transition">Início</a>
-                    <a href="#about" class="text-gray-400 hover:text-white transition">Sobre</a>
-                    <a href="#skills" class="text-gray-400 hover:text-white transition">Habilidades</a>
-                    <a href="#projects" class="text-gray-400 hover:text-white transition">Projetos</a>
-                    <a href="#contact" class="text-gray-400 hover:text-white transition">Contato</a>
-                </div>
+    <footer class="footer">
+        <div class="footer-content">
+            <div>
+                <a href="#" class="footer-logo">Zayon Antunes</a>
+                <p class="footer-text">© 2023 Todos os direitos reservados.</p>
+            </div>
+            <div class="footer-links">
+                <a href="#home">Início</a>
+                <a href="#about">Sobre</a>
+                <a href="#skills">Habilidades</a>
+                <a href="#projects">Projetos</a>
+                <a href="#contact">Contato</a>
             </div>
         </div>
     </footer>
@@ -366,22 +352,10 @@
             }
         });
 
-        // Mobile menu toggle with smooth animation
+        // Mobile menu toggle
         document.getElementById('menu-btn').addEventListener('click', function() {
             const mobileMenu = document.getElementById('mobile-menu');
-            const isHidden = mobileMenu.classList.contains('hidden');
-            
-            if (isHidden) {
-                mobileMenu.classList.remove('hidden');
-                // Force reflow to ensure the element is visible before animation
-                mobileMenu.offsetHeight;
-                mobileMenu.classList.add('show');
-            } else {
-                mobileMenu.classList.remove('show');
-                setTimeout(() => {
-                    mobileMenu.classList.add('hidden');
-                }, 300); // Match CSS transition duration
-            }
+            mobileMenu.classList.toggle('show');
         });
 
         // Close mobile menu when clicking a link
@@ -389,9 +363,6 @@
             link.addEventListener('click', () => {
                 const mobileMenu = document.getElementById('mobile-menu');
                 mobileMenu.classList.remove('show');
-                setTimeout(() => {
-                    mobileMenu.classList.add('hidden');
-                }, 300);
             });
         });
 
@@ -401,12 +372,7 @@
             const menuBtn = document.getElementById('menu-btn');
             
             if (!mobileMenu.contains(event.target) && !menuBtn.contains(event.target)) {
-                if (!mobileMenu.classList.contains('hidden')) {
-                    mobileMenu.classList.remove('show');
-                    setTimeout(() => {
-                        mobileMenu.classList.add('hidden');
-                    }, 300);
-                }
+                mobileMenu.classList.remove('show');
             }
         });
 
@@ -429,7 +395,7 @@
         // Highlight active nav link on scroll
         function updateActiveNav() {
             const sections = document.querySelectorAll('section');
-            const navLinks = document.querySelectorAll('nav a');
+            const navLinks = document.querySelectorAll('.nav-links a, .mobile-menu a');
             
             let current = '';
             sections.forEach(section => {
@@ -441,9 +407,9 @@
             });
 
             navLinks.forEach(link => {
-                link.classList.remove('active-nav');
+                link.classList.remove('active');
                 if (link.getAttribute('href') === `#${current}`) {
-                    link.classList.add('active-nav');
+                    link.classList.add('active');
                 }
             });
         }
@@ -463,25 +429,12 @@
                 const width = window.innerWidth;
                 
                 // Reinitialize AOS based on screen size
-                if (width < 360) {
-                    // Disable AOS on very small screens (320px)
-                    AOS.refresh();
-                } else if (width < 480) {
-                    // Adjust AOS for small mobile (360px-480px)
-                    AOS.refresh();
-                } else if (width <= 768) {
-                    // Adjust AOS settings for mobile (480px-768px)
-                    AOS.refresh();
-                } else {
-                    // Full AOS on larger screens
-                    AOS.refresh();
-                }
+                AOS.refresh();
                 
                 // Close mobile menu on resize to desktop
                 if (width > 768) {
                     const mobileMenu = document.getElementById('mobile-menu');
                     mobileMenu.classList.remove('show');
-                    mobileMenu.classList.add('hidden');
                 }
             }, 250);
         });
