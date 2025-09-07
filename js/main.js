@@ -15,37 +15,11 @@ const Utils = {
 class Navigation {
   constructor() {
     this.navbar = document.querySelector('.navbar');
-    this.menuBtn = document.getElementById('menu-btn');
-    this.mobileMenu = document.getElementById('mobile-menu');
-    this.navLinks = document.querySelectorAll('.nav-link, .mobile-link');
+    this.navLinks = document.querySelectorAll('.nav-link');
     this.sections = document.querySelectorAll('section[id]');
     this.init();
   }
-  init() { this.setupMobile(); this.setupScrollSpy(); this.setupSmooth(); this.setupNavbarBg(); }
-  setupMobile() {
-    if (!this.menuBtn || !this.mobileMenu) return;
-    this.menuBtn.addEventListener('click', () => {
-      const isOpen = this.mobileMenu.classList.toggle('active');
-      this.menuBtn.classList.toggle('active', isOpen);
-      this.menuBtn.setAttribute('aria-expanded', String(isOpen));
-      this.mobileMenu.setAttribute('aria-hidden', String(!isOpen));
-      document.body.style.overflow = isOpen ? 'hidden' : '';
-    });
-    this.navLinks.forEach(l => l.addEventListener('click', () => this.closeMobile()));
-    document.addEventListener('click', (e) => {
-      if (!this.mobileMenu.contains(e.target) && !this.menuBtn.contains(e.target)) this.closeMobile();
-    });
-  }
-  closeMobile() {
-    if (!this.mobileMenu) return;
-    this.mobileMenu.classList.remove('active');
-    if (this.menuBtn) {
-    this.menuBtn.classList.remove('active');
-    this.menuBtn.setAttribute('aria-expanded', 'false');
-    }
-    this.mobileMenu.setAttribute('aria-hidden', 'true');
-    document.body.style.overflow = '';
-  }
+  init() { this.setupScrollSpy(); this.setupSmooth(); this.setupNavbarBg(); }
   setupScrollSpy() {
     const update = Utils.throttle(() => {
       const y = window.pageYOffset + 120;
@@ -192,7 +166,6 @@ class App {
     if (typeof AOS !== 'undefined') AOS.init({ duration: 700, easing: 'ease-out-cubic', once: true, offset: 100 });
     if (typeof feather !== 'undefined') feather.replace();
     const yearEl = document.getElementById('year'); if (yearEl) yearEl.textContent = new Date().getFullYear();
-    window.addEventListener('resize', Utils.debounce(() => { if (typeof AOS !== 'undefined') AOS.refresh(); }, 250));
   }
 }
 
