@@ -117,13 +117,17 @@ body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Robo
 .project-links a:hover { background: var(--primary); color: #0b1220; border-color: var(--primary); }
 
 /* Contact */
-.contact-content { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
-.contact-form { background: var(--bg-tertiary); border: 1px solid var(--border); border-radius: 24px; padding: 24px; }
-.form-group { margin-bottom: 14px; }
-.form-group label { display: block; font-weight: 700; margin-bottom: 6px; }
-.form-group input, .form-group textarea { width: 100%; padding: 12px 14px; border-radius: 12px; border: 2px solid var(--border); background: var(--bg-secondary); color: var(--text-primary); transition: .2s; font-size: 16px; }
-.form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 4px rgba(251,191,36,.15); background: var(--bg-primary); }
-.form-group textarea { min-height: 160px; resize: vertical; }
+.contact { background: var(--bg-secondary); }
+.contact-content { display: flex; justify-content: center; }
+.contact-info { text-align: center; max-width: 600px; }
+.contact-info h3 { color: var(--primary); font-size: 28px; margin-bottom: 10px; }
+.contact-info p { color: var(--text-secondary); margin-bottom: 32px; font-size: 18px; }
+.contact-items { display: grid; gap: 20px; margin-bottom: 32px; }
+.contact-item { display: flex; align-items: center; gap: 16px; background: var(--bg-tertiary); border: 1px solid var(--border); border-radius: 16px; padding: 20px; transition: .2s; }
+.contact-item:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: var(--primary); }
+.contact-item i { width: 24px; height: 24px; color: var(--primary); flex-shrink: 0; }
+.contact-item h4 { color: var(--text-primary); font-size: 16px; margin-bottom: 4px; }
+.contact-item p { color: var(--text-secondary); margin: 0; font-size: 16px; }
 
 /* Footer */
 .footer { background: var(--bg-secondary); border-top: 1px solid var(--border); padding: 40px 0; }

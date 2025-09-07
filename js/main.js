@@ -71,43 +71,6 @@ class SkillsAnimation {
   }
 }
 
-class FormValidation {
-  constructor() { this.form = document.querySelector('.contact-form form'); this.init(); }
-  init() { if (this.form) this.form.addEventListener('submit', (e) => this.onSubmit(e)); }
-  onSubmit(e) {
-      e.preventDefault();
-    const data = new FormData(this.form);
-    const name = String(data.get('name')||'').trim();
-    const email = String(data.get('email')||'').trim();
-    const subject = String(data.get('subject')||'').trim();
-    const message = String(data.get('message')||'').trim();
-    if (name.length < 2) return this.notify('Nome deve ter pelo menos 2 caracteres', 'error');
-    if (!Utils.isEmail(email)) return this.notify('Informe um e-mail válido', 'error');
-    if (subject.length < 3) return this.notify('Assunto deve ter pelo menos 3 caracteres', 'error');
-    if (message.length < 10) return this.notify('Mensagem deve ter pelo menos 10 caracteres', 'error');
-    this.submit();
-  }
-  async submit() {
-    const btn = this.form.querySelector('button[type="submit"]');
-    const old = btn.innerHTML; btn.innerHTML = 'Enviando...'; btn.disabled = true;
-    try {
-      await new Promise(r => setTimeout(r, 1200));
-      this.notify('Mensagem enviada com sucesso!', 'success');
-      this.form.reset();
-    } catch(e) {
-      this.notify('Ocorreu um erro. Tente novamente.', 'error');
-    } finally { btn.innerHTML = old; btn.disabled = false; }
-  }
-  notify(msg, type = 'info') {
-    const el = document.createElement('div');
-    el.textContent = msg; el.role = 'status';
-    const colors = { success: '#10b981', error: '#ef4444', info: '#3b82f6', warning: '#f59e0b' };
-    el.style.cssText = `position:fixed;top:20px;right:20px;z-index:2000;padding:12px 16px;border-radius:10px;font-weight:800;color:#fff;transform:translateX(120%);transition:.3s;background:${colors[type]||colors.info}`;
-    document.body.appendChild(el);
-    requestAnimationFrame(() => { el.style.transform = 'translateX(0)'; });
-    setTimeout(() => { el.style.transform = 'translateX(120%)'; setTimeout(() => el.remove(), 300); }, 3200);
-  }
-}
 
 class BackToTop {
   constructor() { this.btn = document.getElementById('backToTop'); this.init(); }
@@ -159,7 +122,6 @@ class App {
   init() {
     new Navigation();
     new SkillsAnimation();
-    new FormValidation();
     new BackToTop();
     new TypeWriter('#typing', 'Front-end developer', 70, 500);
     new VantaBackground();
